@@ -4,12 +4,86 @@ img{
 }
 
 body{
-	background: url(grey_wash_wall/grey_wash_wall.png) 
+	background: url(lined_paper/lined_paper.png); 
 }
-/*img{
+img{
 	display: inline;
-}*/
-/*
+}
+
 p{
 	display: inline;
-}*/
+	font-family: 'Neucha', cursive;
+}
+
+h1{
+	font-family: 'Barrio', cursive;
+	text-align: center;
+	font-size: 80px;
+	padding: 20px;
+}
+
+#buttons{
+	text-align: center;
+
+}
+
+.btn{
+	padding: 20px;
+	border-radius: 10px;
+	margin: 5px;
+	border: none;
+	color: white;
+	background-color: #D15555; 
+	text-align: center;
+	font-size: 20px;
+	box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+	font-family: 'Neucha', cursive;
+
+}
+
+#userInput{
+	border: 1px solid #636363;
+	padding: 5px;
+	/*text-align: center;*/
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin: auto;
+	border-radius: 5px;
+}
+
+#button{
+	display: block;
+	margin: auto;
+	padding: 15px;
+	border-radius: 10px;
+	/*margin: 5px;*/
+	border: none;
+	color: white;
+	background-color: #D15555; 
+	text-align: center;
+	font-size: 15px;
+	box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+	font-family: 'Neucha', cursive;
+	/*padding-top: 30px*/
+
+}
+
+form{
+	display: block;
+	margin:;
+	font-size: 28px;
+	font-family: 'Neucha', cursive;
+	text-align: center;
+}
+
+
+
+header{
+	background-image: url(download.jpeg);
+	background-repeat: no-repeat;
+	background: #18a999;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+

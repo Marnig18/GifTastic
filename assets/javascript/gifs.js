@@ -1,6 +1,6 @@
 //variables
 
-var topics = ["panda", "hamster", "hedgehog", "cat", "elephant", "dog", "giraffe", "bear", "monkey", "otter", "goat", "penquin"];
+var topics = ["panda", "hamster", "hedgehog", "cat", "elephant", "dog", "giraffe", "bear", "monkey", "otter", "goat", "penquin", "gorilla", "chimpanzee"];
 var selected ;
 var images=[]
 
@@ -32,7 +32,7 @@ function getValues(){
 	console.log(this);
 	selected = ($(this).attr("data-name"));
 	console.log(selected);
-	var queryURL = "http://api.giphy.com/v1/gifs/search?limit=10&api_key=dc6zaTOxFJmzC&q=" + selected 
+	var queryURL = "https://api.giphy.com/v1/gifs/search?limit=10&api_key=dc6zaTOxFJmzC&q=" + selected 
 
 	reset();
 
@@ -46,13 +46,14 @@ function getValues(){
 
 		for (var i = 0; i<response.data.length; i++){
 			var gifs = $("<img>");	
-			gifs.attr("src",response.data[i].images.fixed_height_still.url);
+			
 			gifs.attr({
-				"src": response.data[i].images.fixed_height_still.url,
-				"data-still": response.data[i].images.fixed_height_still.url,
-				"data-animate": response.data[i].images.fixed_height.url,
-				"data-state": "still"
+				"src": response.data[i].images.fixed_width_still.url,
+				"data-still": response.data[i].images.fixed_width_still.url,
+				"data-animate": response.data[i].images.fixed_width.url,
+				"data-state": "still",
 			});
+
 			gifs.addClass("gifs")
 			$("#gifs").append(gifs);
 			images.push(gifs);
@@ -100,9 +101,9 @@ $("#button").on("click", function(event){
 		for (var i = 0; i<response.data.length; i++){
 			var gifs = $("<img>");	
 			gifs.attr({
-				"src": response.data[i].images.fixed_height_still.url,
-				"data-still": response.data[i].images.fixed_height_still.url,
-				"data-animate": response.data[i].images.fixed_height.url,
+				"src": response.data[i].images.fixed_width_still.url,
+				"data-still": response.data[i].images.fixed_width_still.url,
+				"data-animate": response.data[i].images.fixed_width.url,
 				"data-state": "still",
 			});
 			gifs.addClass("gifs")
@@ -117,8 +118,9 @@ $("#button").on("click", function(event){
 				}
 			}
 
-animation();
-
+				animation();
+			
+		
 
 		});
 	});
@@ -148,6 +150,9 @@ function animation(){
 
 function reset(){
 	$("#gifs").html("")
+
+		$("#userInput").val(" ");
+
 }
 
 
