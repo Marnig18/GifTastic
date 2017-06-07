@@ -86,7 +86,7 @@ $("#button").on("click", function(event){
 				event.preventDefault();
 			 	selected = $("#userInput").val().trim();
 				console.log(selected)
-				var queryURL = "http://api.giphy.com/v1/gifs/search?limit=10&api_key=dc6zaTOxFJmzC&q=" + selected 
+				var queryURL = "https://api.giphy.com/v1/gifs/search?limit=10&api_key=dc6zaTOxFJmzC&q=" + selected 
 
 	reset();
 
