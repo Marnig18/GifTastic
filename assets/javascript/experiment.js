@@ -1,10 +1,10 @@
-//variables
+// /variables
 
 var topics = ["panda", "hamster", "hedgehog", "cat", "elephant", "dog", "giraffe", "bear", "monkey", "otter", "goat", "penquin", "gorilla", "chimpanzee"];
 var selected ;
 var images=[]
-
-
+var selected;
+var queryURL = "https://api.giphy.com/v1/gifs/search?limit=10&api_key=dc6zaTOxFJmzC&q=" ;
 
 function createButtons(){
 	for (var j=0; j<topics.length; j++){
@@ -35,7 +35,7 @@ function getValues(){
 	console.log(this);
 	selected = ($(this).attr("data-name"));
 	console.log(selected);
-	var queryURL = "https://api.giphy.com/v1/gifs/search?limit=10&api_key=dc6zaTOxFJmzC&q=" + selected 
+	
 
 	reset();
 
@@ -87,11 +87,12 @@ animation();
 
 $("#button").on("click", function(event){
 				event.preventDefault();
+			 	
 			 	selected = $("#userInput").val().trim();
 				console.log(selected)
-				var queryURL = "https://api.giphy.com/v1/gifs/search?limit=10&api_key=dc6zaTOxFJmzC&q=" + selected 
+				queryURL = queryURL + selected 
 
-	reset();
+	// reset();
 
 	
 				
@@ -130,7 +131,6 @@ $("#button").on("click", function(event){
 
 
 
-
 function animation(){
 
  $(".gifs").on("click", function() {
@@ -157,41 +157,6 @@ function reset(){
 		$("#userInput").val(" ");
 
 }
-
-
-
-
-// user input
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
