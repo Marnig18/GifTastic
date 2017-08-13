@@ -4,7 +4,7 @@ var selected;
 var images = []
 
 
-///function to create a button for each topic in topics array 
+///function to create a button for each topic in topics array
 function createButtons() {
 	for (var j = 0; j < topics.length; j++) {
 		var button = $("<button>")
@@ -16,7 +16,7 @@ function createButtons() {
 	};
 }
 
-//calling the function 
+//calling the function
 createButtons();
 
 
@@ -30,7 +30,7 @@ onClick();
 //function to get button value...
 function getValues() {
 	selected = ($(this).attr("data-name"));
-	var queryURL = "https://api.giphy.com/v1/gifs/search?limit=10&api_key=dc6zaTOxFJmzC&q=" + selected
+	var queryURL = "https://api.giphy.com/v1/gifs/search?limit=10&rating=g&api_key=dc6zaTOxFJmzC&q=" + selected
 
 	reset();
 
@@ -77,7 +77,7 @@ $("#button").on("click", function(event) {
 	event.preventDefault();
 	///getting value of user input and use it for the api query
 	selected = $("#userInput").val().trim();
-	var queryURL = "https://api.giphy.com/v1/gifs/search?limit=10&api_key=dc6zaTOxFJmzC&q=" + selected
+	var queryURL = "https://api.giphy.com/v1/gifs/search?limit=10&rating=&api_key=dc6zaTOxFJmzC&q=" + selected
 
 	reset();
 ////Api call
@@ -90,7 +90,7 @@ $("#button").on("click", function(event) {
 		///looping through the response to display images to the screen
 		for (var i = 0; i < response.data.length; i++) {
 			var gifs = $("<img>");
-			///add ing link and state attributes to each gif 
+			///add ing link and state attributes to each gif
 			gifs.attr({
 				"src": response.data[i].images.fixed_width_still.url,
 				"data-still": response.data[i].images.fixed_width_still.url,
@@ -142,11 +142,5 @@ function animation() {
 //// reset function to clear gifs on the page after each click and to clear user input field
 function reset() {
 	$("#gifs").html("")
-
 	$("#userInput").val(" ");
-
 }
-
-
-
-// user input
